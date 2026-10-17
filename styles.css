@@ -481,3 +481,30 @@
   .site-header > .lang-switch { flex: 0 0 auto; }
   .site-header .menu-toggle { flex: 0 0 auto; padding: 6px; }
 }
+
+
+/* One Hope upcoming announcements */
+.announcements{background:var(--paper);padding-top:95px;padding-bottom:105px}
+.announcements-heading{display:grid;grid-template-columns:1fr .65fr;align-items:end;gap:7%;margin-bottom:44px}
+.announcements-heading h2{font-size:clamp(52px,8vw,118px);line-height:.91}
+.announcements-heading h2 em{color:var(--orange);font-style:normal}
+.announcements-heading>p{font-size:clamp(16px,1.55vw,20px);line-height:1.65;max-width:420px}
+.announcement-list{border-top:1px solid #dbdcd7}
+.announcement-card{display:grid;grid-template-columns:minmax(160px,245px) 1fr;align-items:center;gap:clamp(26px,4vw,65px);padding:28px 0;border-bottom:1px solid #dbdcd7}
+.announcement-photo{display:block;max-width:245px;overflow:hidden;background:#ece9e4}
+.announcement-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;transition:transform .25s ease}
+.announcement-photo:hover img{transform:scale(1.025)}
+.announcement-details h3{font-size:clamp(23px,2.6vw,38px);letter-spacing:-.045em;line-height:1.15;margin-bottom:13px}
+.announcement-date{font-size:13px;font-weight:700;color:var(--orange);margin-bottom:15px;line-height:1.5}
+.announcement-description{font-size:15px;line-height:1.75;color:#545b53;max-width:690px}
+.announcement-link{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.07em;border-bottom:2px solid var(--orange);padding:0 0 7px;margin-top:20px}
+.announcement-link:hover{color:var(--orange)}
+.announcement-empty{padding:32px 0;color:var(--muted);line-height:1.6}
+@media(max-width:720px){
+  .announcements{padding-top:74px;padding-bottom:74px}
+  .announcements-heading{grid-template-columns:1fr;gap:20px}
+  .announcement-card{grid-template-columns:minmax(0,1fr);gap:22px}
+  .announcement-photo{max-width:min(65%,245px)}
+  .announcement-details h3{font-size:28px}
+}
+@media(prefers-reduced-motion:reduce){.announcement-photo img{transition:none}}
