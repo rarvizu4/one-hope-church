@@ -8,10 +8,10 @@ The GitHub Actions workflow `.github/workflows/refresh-social.yml` tries to chec
 
 ## Enable YouTube
 
-1. Find the **exact** YouTube channel ID, usually 24 characters beginning with `UC`. If you only know the channel URL or @handle, resolve it to its channel ID first.
-2. Set the public `youtubeChannelId` field in `social-sources.json`. Alternatively, create a GitHub Actions repository variable called `YOUTUBE_CHANNEL_ID` with the same ID.
-3. In **Actions → Refresh social feeds → Run workflow**, run it once.
-4. Verify that `data/youtube.json` contains posts. The site will then show the native YouTube cards.
+1. The official church channel handle `@iglesiaunaesperanza4112` is already saved as `youtubeHandle` in `social-sources.json`.
+2. Open **Actions → Refresh social feeds → Run workflow**, and run it once. The updater will attempt to resolve the handle from YouTube's public channel page, then fetch the public channel's RSS feed.
+3. Verify that `data/youtube.json` contains posts. When it does, the site will display the native YouTube cards automatically.
+4. If YouTube blocks the channel-page lookup or its HTML changes, obtain the exact 24-character `UC...` channel ID through YouTube Studio (Settings → Channel → Advanced settings) and set `youtubeChannelId` in `social-sources.json` instead. Alternatively set a repository variable `YOUTUBE_CHANNEL_ID`. The stable ID takes precedence over the handle.
 
 No YouTube API key is required. The workflow uses the public channel RSS feed. It shows recent uploads that appear in the channel's RSS, which may not include every livestream before it becomes a regular video.
 
