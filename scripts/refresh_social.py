@@ -102,6 +102,11 @@ def main():
     enabled = 0
     errors = 0
     channel_id = os.environ.get("YOUTUBE_CHANNEL_ID", "").strip()
+    if not channel_id:
+        config_path = ROOT / "social-sources.json"
+        if config_path.exists():
+            config = json.loads(config_path.read_text(encoding="utf-8"))
+            channel_id = str(config.get("youtubeChannelId") or "").strip()
     if channel_id:
         enabled += 1
         try:
@@ -110,7 +115,7 @@ def main():
             errors += 1
             print("YouTube feed could not refresh: " + str(exc), file=sys.stderr)
     else:
-        print("YouTube: waiting for repository variable YOUTUBE_CHANNEL_ID")
+        print("YouTube: waiting for channel ID in social-sources.json or YOUTUBE_CHANNEL_ID")
 
     token = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip()
     if token:
