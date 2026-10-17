@@ -29,6 +29,12 @@ def variants(url):
         yield width, v
         yield width, v.replace("quality:75", "quality:90")
         yield width, v.replace("&x-canva-quality=thumbnail", "")
+        from urllib.parse import urlsplit, urlunsplit, parse_qsl, urlencode
+        parts = urlsplit(v)
+        full = dict(parse_qsl(parts.query))
+        for allowed in (("token", "signer"), ("token",), ("token", "signer", "osig"), ("csig", "exp", "token", "signer")):
+            trial = {k: value for k, value in full.items() if k in allowed}
+            yield width, urlunsplit((parts.scheme, parts.netloc, parts.path, urlencode(trial), ""))
     yield 200, url
 
 def fetch(name, url):
@@ -49,7 +55,7 @@ def fetch(name, url):
             print(name,"saved to",out.name,"size",out.stat().st_size,flush=True)
             return
         except (urllib.error.URLError, ValueError, OSError) as exc:
-            print(name,"variant",wanted_width,"failed:",type(exc).__name__,flush=True)
+            print(name,"variant",wanted_width,"failed:",type(exc).__name__,getattr(exc,"code",""),flush=True)
     raise RuntimeError(name+" could not retrieve a sufficiently large original photo")
 
 for language in ("en", "es"):
