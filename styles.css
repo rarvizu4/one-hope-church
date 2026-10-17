@@ -868,3 +868,23 @@ html{scroll-padding-top:100px}
   .native-youtube-gallery { max-width:min(100%,370px); }
   .native-youtube-gallery .native-social-grid {grid-template-columns:minmax(0,1fr)}
 }
+
+/* Desktop-only enlargement of the latest YouTube video square. */
+@media (min-width: 961px) {
+  .native-youtube-gallery {
+    max-width: 600px;
+  }
+  .native-youtube-gallery .native-social-copy {
+    padding: 24px 28px;
+    gap: 12px;
+  }
+  .native-youtube-gallery .native-social-title {
+    font-size: clamp(23px, 2.3vw, 28px);
+  }
+  .native-youtube-gallery .native-social-date {
+    font-size: 13px;
+  }
+  .native-youtube-gallery .native-social-outbound {
+    font-size: 12px;
+  }
+}
