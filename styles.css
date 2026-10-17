@@ -888,3 +888,19 @@ html{scroll-padding-top:100px}
     font-size: 12px;
   }
 }
+
+/* Original church community collage replaces old 'Grow in Faith' banner. */
+.photo-band.photo-band-thankful{
+  height:clamp(310px,25vw,400px);
+  background-color:#222624;
+  background-image:url('images/one-hope-thankful-banner.jpg'),url('images/grow-in-faith-band.jpg');
+  background-size:cover;
+  background-position:67% 54%;
+  background-repeat:no-repeat;
+}
+@media(max-width:720px){
+  .photo-band.photo-band-thankful{
+    height:clamp(225px,49vw,320px);
+    background-position:75% 54%;
+  }
+}
