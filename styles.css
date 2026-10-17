@@ -893,7 +893,7 @@ html{scroll-padding-top:100px}
 .photo-band.photo-band-thankful{
   height:clamp(310px,25vw,400px);
   background-color:#222624;
-  background-image:url('images/one-hope-thankful-banner.webp'),url('images/grow-in-faith-band.jpg');
+  background-image:url('images/one-hope-thankful-banner.jpg'),url('images/one-hope-thankful-banner.webp'),url('images/grow-in-faith-band.jpg');
   background-size:cover;
   background-position:67% 54%;
   background-repeat:no-repeat;
