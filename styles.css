@@ -643,3 +643,55 @@ html{scroll-padding-top:100px}
 @media (prefers-reduced-motion:reduce){
   .announcement-photo img{transition:none}
 }
+
+
+/* Hero social shortcuts, centered where the former hero arrow appeared. */
+.hero-socials{
+  position:absolute;
+  z-index:3;
+  bottom:58px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:26px;
+  white-space:nowrap;
+}
+.hero-socials a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  color:#fff;
+  width:36px;
+  height:36px;
+  border-radius:50%;
+  transition:color .18s ease,transform .18s ease;
+}
+.hero-socials a svg{
+  display:block;
+  width:24px;
+  height:24px;
+  flex:none;
+}
+.hero-socials a:hover,.hero-socials a:focus-visible{
+  color:#aebeff;
+  transform:translateY(-2px);
+}
+.hero-socials a:focus-visible{
+  outline:2px solid #fff;
+  outline-offset:2px;
+}
+@media (max-width:720px){
+  .hero-content{padding-bottom:88px}
+  .hero-socials{bottom:12px;gap:18px}
+  .hero-socials a{width:37px;height:37px}
+  .hero-socials a svg{width:22px;height:22px}
+}
+@media (max-width:390px){
+  .hero-content{padding-bottom:72px}
+  .hero-socials{bottom:9px}
+}
+@media (prefers-reduced-motion:reduce){
+  .hero-socials a{transition:none}
+}
