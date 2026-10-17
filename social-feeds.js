@@ -99,16 +99,19 @@
     const config = feeds[kind];
     const target = document.getElementById(config.id);
     const fallback = document.querySelector(config.fallback);
-    if (!target || !fallback || !config.items.length) return;
+    if (!target || !config.items.length) return;
     const grid = create("div", "native-social-grid");
-    config.items.slice(0, 8).forEach(post => {
+    const ordered = kind === "youtube"
+      ? [...config.items].sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0))
+      : config.items;
+    ordered.slice(0, kind === "youtube" ? 1 : 8).forEach(post => {
       const element = card(kind, post);
       if (element) grid.append(element);
     });
     if (!grid.children.length) return;
     target.replaceChildren(grid);
     target.hidden = false;
-    fallback.hidden = true;
+    if (fallback) fallback.hidden = true;
   }
 
   async function load(kind) {
