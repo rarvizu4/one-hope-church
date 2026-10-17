@@ -3,15 +3,15 @@
     "id": "yth-food-bank-2026",
     "startsAt": "2026-11-07T13:00:00-06:00",
     "endsAt": "2026-11-08T00:00:00-06:00",
-    "image": "https://design.canva.ai/1lTB0nCztaEI-Ta",
+    "image": "images/food-bank-volunteer-day.svg",
     "imageAltEn": "YTH Volunteer Day at the Houston Food Bank flyer",
     "imageAltEs": "Volante del día de voluntariado juvenil en el Banco de Alimentos de Houston",
     "titleEn": "YTH Volunteer Day at the Food Bank",
     "titleEs": "Día de voluntariado juvenil en el Banco de Alimentos",
     "dateEn": "Saturday, November 7, 2026 · 1:00 PM",
     "dateEs": "Sábado, 7 de noviembre de 2026 · 1:00 p. m.",
-    "descriptionEn": "Our youth will serve together at the Houston Food Bank. Contact a youth leader for registration and participation details.",
-    "descriptionEs": "Nuestros jóvenes servirán juntos en el Banco de Alimentos de Houston. Comunícate con un líder juvenil para conocer los detalles de inscripción.",
-    "flyerUrl": "https://www.canva.com/d/0x6hkhI3XuLOph0"
+    "descriptionEn": "Join One Hope Youth as we serve our community at the Houston Food Bank. We will come together to help others and put our faith into action. Contact a youth leader for volunteer registration details.",
+    "descriptionEs": "Acompaña a One Hope Youth mientras servimos a nuestra comunidad en el Banco de Alimentos de Houston. Nos reuniremos para ayudar a otros y poner nuestra fe en acción. Comunícate con un líder juvenil para obtener información sobre la inscripción.",
+    "flyerUrl": "images/food-bank-volunteer-day.svg"
   }
 ]
