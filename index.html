@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
   <script src="script.js" defer></script>
+  <script src="social-feeds.js" defer></script>
   <script src="https://elfsightcdn.com/platform.js" async></script>
 </head>
 <body>
@@ -106,6 +107,7 @@
         <p>Can't make it in person? Join our church family online for worship, prayer, and the Word. Catch our livestream or watch previous messages on YouTube.</p>
       </div>
       <!-- Elfsight YouTube Gallery: loads the church's gallery from Elfsight -->
+      <div id="native-youtube-gallery" class="native-social-gallery native-youtube-gallery" aria-label="Latest One Hope Church YouTube videos" hidden></div>
       <div class="youtube-gallery" aria-label="Iglesia Una Esperanza YouTube gallery">
         <div class="elfsight-app-8e9f2fcd-f4a5-4d44-9476-198e8466a66b" data-elfsight-app-lazy></div>
       </div>
@@ -119,6 +121,7 @@
         </div>
         <p>See what's happening throughout the week and stay updated with our future events.</p>
       </div>
+      <div id="native-instagram-gallery" class="native-social-gallery native-instagram-gallery" aria-label="Latest One Hope Church Instagram posts" hidden></div>
       <div class="instagram-gallery" aria-label="Iglesia Una Esperanza Instagram feed">
         <!-- Elfsight Instagram Feed: automatically displays the connected account's posts -->
         <div class="elfsight-app-50b0d5c3-8189-4c79-936b-af5bff6adf65" data-elfsight-app-lazy></div>
@@ -181,5 +184,9 @@
     </div>
   </section>
   <footer class="footer"><div class="footer-top"><a class="brand footer-brand" href="#top"><img class="church-logo" src="images/church-logo.png" alt="Iglesia Una Esperanza" /></a><span>ONE CHURCH. ONE FAMILY. ONE HOPE.</span></div><div class="footer-bottom"><span>© <span id="year"></span> ONE HOPE CHURCH</span><span>SPRING, TEXAS · IGLESIA UNA ESPERANZA</span><a href="#top">BACK TO TOP ↑</a></div></footer>
+  <dialog id="native-video-dialog" class="native-video-dialog" aria-label="Church YouTube video player">
+    <button class="native-video-close" type="button" aria-label="Close video player">CLOSE ×</button>
+    <div class="native-video-stage"></div>
+  </dialog>
 </body>
 </html>
