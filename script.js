@@ -34,8 +34,7 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   ".hero-eyebrow": "BIENVENIDOS A IGLESIA UNA ESPERANZA",
   ".hero h1": "TRANSFORMANDO<br>VIDAS A TRAVÉS<br>DE SU <em>PALABRA</em><span class=\"hero-period\">.</span>",
   ".hero-bottom p": "Comunidad verdadera. Enseñanza bíblica.<br>Una familia de fe arraigada en la esperanza.",
-  ".hero-side-label": "ONE HOPE / UNA ESPERANZA <span>—</span> FIRMES EN LA FE",
-  ".hero-index": "01 / 04 <span>DESLIZA PARA EXPLORAR ↓</span>",
+  ".hero-index": "01 / 04",
   ".sunday-feature-kicker": "<span class=\"sunday-feature-line\"></span> ACOMPÁÑANOS / 001",
   ".sunday-feature-tag": "REUNIÓN DOMINICAL",
   ".sunday-feature h2": "DOMINGOS A LAS<br><span>11AM Y 1PM</span><span class=\"sunday-feature-period\">.</span>",
@@ -190,7 +189,7 @@ document.querySelector('#year').textContent = new Date().getFullYear();
     document.querySelector('.give-methods')?.setAttribute('aria-label', es ? 'Formas de dar' : 'Giving options');
     document.querySelector('.give-card-link')?.setAttribute('aria-label', es ? 'Donar con tarjeta a través de Square, se abre en otra pestaña' : 'Give by card using Square, opens in a new tab');
     document.querySelector('.give-photo img')?.setAttribute('alt', es ? 'Una bandeja de ofrendas durante un servicio de adoración' : 'A church offering plate being passed during worship');
-    document.querySelector('.hero-bottom .circle-')?.setAttribute('aria-label', es ? 'Conoce más sobre Iglesia Una Esperanza' : 'Learn more about One Hope Church');
+    document.querySelector('.hero-socials a[href="#watch"]')?.setAttribute('aria-label', es ? 'Mira nuestros mensajes en YouTube' : 'Watch our YouTube messages');
     try { localStorage.setItem('one-hope-language', language); } catch (_) {}
     document.querySelector('#year').textContent = new Date().getFullYear();
   }
