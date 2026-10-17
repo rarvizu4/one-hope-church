@@ -71,6 +71,9 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   ".meet-points li:nth-child(2)": "Adoración para toda la familia",
   ".meet-points li:nth-child(3)": "Comunidad real para cada generación",
   ".meet .button-dark": "PLANEA TU VISITA ↗",
+  ".announcements .section-kicker": "<span class=\"kicker-line\"></span> EVENTOS DE ONE HOPE / 005",
+  ".announcements h2": "PRÓXIMOS<br><em>EVENTOS.</em>",
+  ".announcements-heading > p": "Descubre lo que está pasando en Iglesia Una Esperanza. Nos encantaría contar contigo.",
   ".watch h2": "MIRA EL<br><em>MENSAJE MÁS RECIENTE.</em>",
   ".watch-heading-row > p": "¿No puedes venir en persona? Acompáñanos en línea y ponte al día con nuestros mensajes más recientes y contenido de nuestra iglesia.",
   ".instagram-heading-row h2": "MANTENTE<br><em>CONECTADO.</em>",
@@ -93,6 +96,64 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   ".footer-bottom > span:first-child": "© <span id=\"year\"></span> IGLESIA UNA ESPERANZA",
   ".footer-bottom > a": "VOLVER ARRIBA ↑"
 };
+  let announcementEvents = [];
+  let currentAnnouncementLanguage = 'en';
+  function renderAnnouncements(language) {
+    const host = document.querySelector('#announcements-list');
+    if (!host) return;
+    const es = language === 'es';
+    host.replaceChildren();
+    const upcoming = announcementEvents.filter(event => {
+      if (!event.endsAt) return true;
+      const expires = new Date(event.endsAt);
+      return !Number.isNaN(expires.valueOf()) && expires.getTime() > Date.now();
+    }).sort((a, b) => new Date(a.startsAt || 0) - new Date(b.startsAt || 0));
+    if (!upcoming.length) {
+      const empty = document.createElement('p');
+      empty.className = 'announcement-empty';
+      empty.textContent = es ? 'No hay próximos eventos anunciados. ¡Vuelve pronto!' : 'No upcoming events have been announced. Check back soon!';
+      host.append(empty);
+      return;
+    }
+    upcoming.forEach(event => {
+      const card = document.createElement('article');
+      card.className = 'announcement-card';
+      const photoLink = document.createElement('a');
+      photoLink.className = 'announcement-photo';
+      photoLink.href = event.flyerUrl || event.image || '#announcements';
+      photoLink.target = '_blank';
+      photoLink.rel = 'noopener noreferrer';
+      photoLink.setAttribute('aria-label', es ? 'Ver el volante del evento' : 'View event flyer');
+      const photo = document.createElement('img');
+      photo.src = event.image;
+      photo.alt = es ? (event.imageAltEs || event.titleEs || 'Volante del evento') : (event.imageAltEn || event.titleEn || 'Event flyer');
+      photo.loading = 'lazy';
+      photo.decoding = 'async';
+      photoLink.append(photo);
+      const details = document.createElement('div');
+      details.className = 'announcement-details';
+      const title = document.createElement('h3');
+      title.textContent = es ? (event.titleEs || event.titleEn) : event.titleEn;
+      const date = document.createElement('p');
+      date.className = 'announcement-date';
+      date.textContent = es ? (event.dateEs || event.dateEn) : event.dateEn;
+      const description = document.createElement('p');
+      description.className = 'announcement-description';
+      description.textContent = es ? (event.descriptionEs || event.descriptionEn) : event.descriptionEn;
+      details.append(title, date, description);
+      if (event.flyerUrl || event.image) {
+        const view = document.createElement('a');
+        view.className = 'announcement-link';
+        view.href = event.flyerUrl || event.image;
+        view.target = '_blank';
+        view.rel = 'noopener noreferrer';
+        view.textContent = es ? 'VER FLYER ↗' : 'VIEW FLYER ↗';
+        details.append(view);
+      }
+      card.append(photoLink, details);
+      host.append(card);
+    });
+  }
   const originals = new Map();
   const nodes = [];
   Object.entries(translations).forEach(([selector, spanish]) => {
@@ -106,6 +167,8 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   const defaultTitle = document.title;
   const buttons = document.querySelectorAll('.lang-btn');
   function setLanguage(language) {
+    currentAnnouncementLanguage = language;
+    renderAnnouncements(language);
     const es = language === 'es';
     nodes.forEach(([node, spanish]) => { node.innerHTML = es ? spanish : originals.get(node); });
     document.documentElement.lang = es ? 'es' : 'en';
@@ -135,4 +198,23 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   let saved = 'en';
   try { if (localStorage.getItem('one-hope-language') === 'es') saved = 'es'; } catch (_) {}
   setLanguage(saved);
+  fetch('announcements.json', { cache: 'no-cache' })
+    .then(response => {
+      if (!response.ok) throw new Error('Could not load announcements');
+      return response.json();
+    })
+    .then(data => {
+      announcementEvents = Array.isArray(data) ? data : [];
+      renderAnnouncements(currentAnnouncementLanguage);
+    })
+    .catch(error => {
+      console.warn(error);
+      const host = document.querySelector('#announcements-list');
+      if (host) {
+        const p = document.createElement('p');
+        p.className = 'announcement-empty';
+        p.textContent = currentAnnouncementLanguage === 'es' ? 'No fue posible cargar los anuncios.' : 'Announcements are temporarily unavailable.';
+        host.replaceChildren(p);
+      }
+    });
 })();
