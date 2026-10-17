@@ -904,3 +904,8 @@ html{scroll-padding-top:100px}
     background-position:75% 54%;
   }
 }
+
+/* Spanish-specific original collage — activated by the existing EN/ES switch. */
+html[lang="es"] .photo-band.photo-band-thankful{
+  background-image:url('images/one-hope-thankful-banner-es.jpg'),url('images/one-hope-thankful-banner.jpg'),url('images/grow-in-faith-band.jpg');
+}
