@@ -189,7 +189,7 @@ document.querySelector('#year').textContent = new Date().getFullYear();
     document.querySelector('.give-methods')?.setAttribute('aria-label', es ? 'Formas de dar' : 'Giving options');
     document.querySelector('.give-card-link')?.setAttribute('aria-label', es ? 'Donar con tarjeta a través de Square, se abre en otra pestaña' : 'Give by card using Square, opens in a new tab');
     document.querySelector('.give-photo img')?.setAttribute('alt', es ? 'Una bandeja de ofrendas durante un servicio de adoración' : 'A church offering plate being passed during worship');
-    document.querySelector('.hero-socials a[href="#watch"]')?.setAttribute('aria-label', es ? 'Mira nuestros mensajes en YouTube' : 'Watch our YouTube messages');
+    document.querySelector('.hero-socials a[href="https://www.youtube.com/@iglesiaunaesperanza4112"]')?.setAttribute('aria-label', es ? 'Visita nuestro canal de YouTube' : 'Visit our YouTube channel');
     try { localStorage.setItem('one-hope-language', language); } catch (_) {}
     document.querySelector('#year').textContent = new Date().getFullYear();
   }
