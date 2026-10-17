@@ -1,0 +1,18 @@
+ONE HOPE CHURCH – GITHUB PAGES DEPLOYMENT
+========================================= 
+Repository: https://github.com/rarvizu4/one-hope-church
+Expected site URL: https://rarvizu4.github.io/one-hope-church/
+
+1. In GitHub Desktop: File > Clone Repository > GitHub.com > rarvizu4/one-hope-church.
+2. Click Repository > Show in Finder.
+3. Copy all files AND the images and videos folders from this directory directly into the repository folder.
+   The repository folder MUST have index.html at its top level.
+4. Return to GitHub Desktop, enter a summary, Commit to main, then Push origin.
+5. On github.com open the repository > Settings > General > Danger Zone > Change visibility > Public.
+6. Under Settings > Pages, choose Deploy from a branch > main > / (root) > Save.
+7. Wait for GitHub Pages to finish deploying and visit the URL above.
+
+IMPORTANT: Keep the videos/ folder. The two full-resolution homepage videos are H.265/HEVC
+and may fail on browsers such as Chrome. These can be replaced with H.264 web exports later.
+The video files are large, so loading on phones may be slow. Do not upload the ZIP itself to
+GitHub: add its EXTRACTED CONTENTS to the repository.

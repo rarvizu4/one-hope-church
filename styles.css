@@ -1,0 +1,483 @@
+:root{--ink:#1c201c;--cream:#f4f0e8;--paper:#faf8f3;--orange:#0f1bf2;--sage:#adb6a0;--muted:#6d746c}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;color:var(--ink);background:var(--cream);font-family:'DM Sans',sans-serif}a{color:inherit;text-decoration:none}button{font:inherit}h1,h2,h3,p{margin:0}h1,h2,h3{font-family:Manrope,sans-serif;font-weight:800;letter-spacing:-.075em;line-height:.94}::selection{background:var(--orange);color:white}.skip-link{position:absolute;top:-80px;left:15px;z-index:99;background:white;padding:10px}.skip-link:focus{top:10px}.site-header{height:88px;background:var(--paper);display:flex;align-items:center;justify-content:space-between;padding:0 5.5%;gap:30px;position:relative;z-index:30}.brand{display:inline-flex;align-items:center;gap:11px;flex-shrink:0}.brand-mark{display:grid;grid-template-columns:repeat(2,12px);grid-template-rows:repeat(2,12px);gap:3px;transform:rotate(-15deg)}.brand-mark span{border-radius:50% 50% 2px 50%;background:var(--orange)}.brand-mark span:nth-child(2){transform:rotate(90deg)}.brand-mark span:nth-child(3){transform:rotate(-90deg)}.brand-mark span:nth-child(4){transform:rotate(180deg)}.brand-words{font:800 19px/.87 Manrope;letter-spacing:-.065em}.brand-words>span{display:block;font-size:10px;letter-spacing:.29em;margin-top:6px}.desktop-nav{display:flex;align-items:center;gap:32px;font-size:12px;font-weight:700}.desktop-nav a:hover,.text-link:hover{color:var(--orange)}.header-cta{background:var(--ink);color:white;padding:16px 21px;border-radius:2px;font-size:11px;font-weight:800;letter-spacing:.05em}.header-cta span{margin-left:20px;font-size:16px}.menu-toggle{display:none;background:none;border:0;cursor:pointer;padding:10px}.menu-toggle span{display:block;width:25px;height:2px;background:var(--ink);margin:6px}.mobile-nav{background:var(--paper);padding:20px 6%;position:absolute;top:88px;left:0;right:0;z-index:40;box-shadow:0 14px 20px #0001}.mobile-nav a{display:block;padding:14px 0;font-weight:700;border-bottom:1px solid #ddd}.mobile-nav[hidden]{display:none}.hero{height:min(850px,calc(100svh - 88px));min-height:600px;color:#fff;position:relative;overflow:hidden;background:#313c37}.hero-photo{position:absolute;inset:0;background-image:url('images/hero-cover.jpg');background-size:cover;background-position:center 42%;filter:saturate(.95) brightness(.68);transform:scale(1.02)}.hero-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(7,10,16,.78) 0%,rgba(10,15,22,.50) 42%,rgba(14,18,26,.18) 76%),linear-gradient(0deg,rgba(5,8,12,.40),transparent 45%)}.hero-topline{position:absolute;top:35px;left:5.5%;right:5.5%;display:flex;align-items:center;gap:12px;font-size:10px;font-weight:800;letter-spacing:.16em}.live-dot{width:8px;height:8px;background:var(--orange);border-radius:50%}.topline-cross{margin-left:auto;color:var(--orange);font-size:20px}.hero-content{position:absolute;bottom:82px;left:5.5%;right:5.5%}.eyebrow,.small-label,.section-kicker{font-weight:800;font-size:11px;letter-spacing:.16em}.hero-eyebrow{margin-bottom:28px}.hero h1{font-size:clamp(74px,11.3vw,182px);letter-spacing:-.092em;line-height:.83}.hero h1 em{font-style:normal;color:var(--orange)}.hero-period,.orange{color:var(--orange)}.hero-bottom{margin-top:44px;display:flex;justify-content:space-between;max-width:820px;align-items:end}.hero-bottom p{font-size:17px;line-height:1.6;font-weight:500}.circle-arrow{width:67px;height:67px;border:1.5px solid #fff;border-radius:50%;display:grid;place-items:center;font-size:32px;transition:.2s}.circle-arrow:hover{background:var(--orange);border-color:var(--orange);transform:rotate(45deg)}.hero-side-label{position:absolute;right:3%;top:48%;writing-mode:vertical-rl;font-size:10px;letter-spacing:.19em;font-weight:700}.hero-side-label span{color:var(--orange)}.hero-index{position:absolute;bottom:27px;left:5.5%;right:5.5%;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.12em;font-weight:700}.marquee{overflow:hidden;background:var(--orange);padding:18px 0;white-space:nowrap;color:#1c201c;font:800 16px Manrope;letter-spacing:.08em}.marquee div{width:max-content;animation:move 35s linear infinite}.marquee span{margin:0 30px}@keyframes move{to{transform:translateX(-40%)}}.section-pad{padding:115px 8%}.section-kicker{display:flex;align-items:center;gap:13px;margin-bottom:52px}.kicker-line{display:inline-block;background:var(--orange);height:2px;width:27px}.intro{background:var(--paper)}.intro-grid{display:grid;grid-template-columns:1.45fr 1fr;gap:12%;align-items:end}.intro h2,.section-heading h2,.watch h2{font-size:clamp(54px,7.8vw,115px)}.intro h2 span:not(.orange){color:#a7afa3}.intro-copy p,.section-heading>p,.watch-content p{font-size:clamp(17px,1.6vw,22px);line-height:1.65;max-width:450px}.text-link{display:inline-block;margin-top:34px;font-size:11px;font-weight:800;letter-spacing:.13em;border-bottom:1px solid var(--ink);padding-bottom:13px}.text-link span{font-size:19px;margin-left:45px}.photo-band{height:440px;background:linear-gradient(rgba(12,18,20,.28),rgba(12,18,20,.50)),url('images/grow-in-faith-band.jpg') center 56%/cover;display:grid;place-items:center}.photo-band-inner{display:flex;gap:36px;align-items:center;color:#fff;font:800 clamp(19px,4vw,55px) Manrope;letter-spacing:-.05em;text-align:center}.mini-star{color:var(--orange);font-size:35px}.gather{background:#e9e9e0}.section-heading{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:53px}.section-heading .section-kicker{margin-bottom:38px}.section-heading>p{max-width:385px}.schedule-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}.schedule-card{background:#cdd3c3;padding:43px;min-height:405px;display:flex;flex-direction:column}.schedule-card-dark{background:linear-gradient(180deg,rgba(11,14,18,.30),rgba(8,10,14,.72)),url('images/prayer-and-word.jpg') center 42%/cover no-repeat;color:#fff;position:relative;overflow:hidden}.schedule-card h3{font-size:clamp(41px,5vw,76px);margin:45px 0 24px}.schedule-card p{line-height:1.7;max-width:310px;font-size:16px}.schedule-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:35px;border-top:1px solid currentColor;font-size:11px;font-weight:800;letter-spacing:.1em}.schedule-icon{font-size:27px}.editor-note{font-size:11px;color:#686b65;margin-top:20px}.ministries{background:var(--paper)}.ministries .section-heading h2 i{font-style:normal;color:var(--orange)}.ministry-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.ministry-card{height:410px;background:#6b746c;position:relative;color:white;padding:26px;display:flex;justify-content:space-between;flex-direction:column;overflow:hidden}.ministry-card:before{content:'';position:absolute;inset:0;background-size:cover;background-position:center;transition:transform .5s}.ministry-card:after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,#0005,transparent 35%,#000a)}.ministry-card:hover:before{transform:scale(1.07)}.kids:before{background-image:url('images/one-hope-kids.jpg');background-position:center 52%;background-size:cover;background-repeat:no-repeat}.juniors:before{background-image:url('images/one-hope-juniors.jpg');background-position:center 42%;background-size:cover;background-repeat:no-repeat}.youth:before{background-image:url('images/one-hope-youth.jpg');background-position:center 45%;background-size:cover;background-repeat:no-repeat}.ministry-number,.ministry-card>div{z-index:1}.ministry-number{font-size:11px;letter-spacing:.15em;font-weight:800}.ministry-card>div{display:flex;justify-content:space-between;align-items:end}.ministry-card h3{font-size:clamp(30px,3.25vw,50px)}.ministry-arrow{width:42px;height:42px;background:var(--orange);border-radius:50%;display:grid;place-items:center;font-size:25px}.statement{background:var(--orange);min-height:570px;padding:65px 8%;position:relative;display:flex;flex-direction:column;justify-content:center;overflow:hidden}.statement-top{position:absolute;top:60px;font-size:11px;letter-spacing:.15em;font-weight:800}.statement h2{font-size:clamp(75px,12vw,175px);z-index:1}.statement h2 em{font-style:normal;color:var(--paper)}.statement p{margin-top:25px;font-weight:700;font-size:18px}.statement-cross{position:absolute;right:5%;bottom:-105px;font-size:490px;line-height:1;color:#ffffff25}.watch{background:var(--paper)}.watch-content{display:grid;grid-template-columns:1fr 1fr;gap:9%;align-items:center}.watch h2{margin-bottom:35px}.watch-content p{font-size:18px}.button-dark{display:inline-block;margin-top:32px;background:var(--ink);color:white;padding:20px 25px;font-size:11px;font-weight:800;letter-spacing:.08em}.watch-visual{min-height:480px;display:flex;align-items:center;justify-content:center;position:relative;background:linear-gradient(#0003,#0008),url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1000&q=85') center/cover}.watch-visual>span{position:absolute;bottom:25px;left:25px;color:white;font-size:11px;font-weight:800;letter-spacing:.2em}.play-ring{border:2px solid #fff;color:white;width:100px;height:100px;border-radius:50%;display:grid;place-items:center;font-size:25px}.visit{position:relative;overflow:hidden;background:#c8d0c2;text-align:center;min-height:600px;display:flex;flex-direction:column;align-items:center;justify-content:center}.visit .section-kicker{margin-bottom:35px}.visit h2{font-size:clamp(53px,8vw,125px);z-index:1}.visit h2 em{font-style:normal;color:var(--orange)}.visit p{font-size:18px;line-height:1.5;max-width:520px;margin:30px 0;z-index:1}.visit-button{padding:21px 32px;background:var(--orange);font-size:12px;font-weight:800;letter-spacing:.1em;z-index:1}.visit-orbit{position:absolute;top:-150px;right:-50px;font-size:550px;color:#fff3;line-height:1}.visit-disclaimer{font-size:11px;color:#5d645b;margin-top:12px;z-index:1}.footer{background:var(--ink);color:white;padding:55px 8% 25px}.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:80px}.footer-top>span{font-size:12px;letter-spacing:.15em;font-weight:700}.footer-bottom{border-top:1px solid #ffffff4a;padding-top:22px;display:flex;justify-content:space-between;font-size:10px;letter-spacing:.11em;font-weight:700;gap:20px}.footer-brand .brand-words{color:white}@media(max-width:1000px){.desktop-nav{gap:15px}.site-header{padding:0 4%}.section-pad{padding:85px 6%}.intro-grid{gap:5%}.ministry-card{height:340px;padding:18px}}@media(max-width:720px){.site-header{height:75px;padding:0 5%}.desktop-nav,.header-cta{display:none}.menu-toggle{display:block}.mobile-nav{top:75px}.hero{height:730px;min-height:0;max-height:calc(100svh - 75px)}.hero-photo{background-position:center 35%}.hero-topline{font-size:8px;left:6%;right:6%}.hero-content{left:6%;right:6%;bottom:115px}.hero h1{font-size:clamp(64px,14vw,105px)}.hero-bottom{margin-top:35px}.hero-bottom p{font-size:14px}.circle-arrow{width:50px;height:50px}.hero-side-label{display:none}.section-pad{padding:75px 6%}.intro-grid,.watch-content{grid-template-columns:1fr;gap:35px}.intro h2,.section-heading h2,.watch h2{font-size:clamp(53px,10vw,85px)}.intro-copy p,.section-heading>p{font-size:17px}.section-heading{display:block}.section-heading>p{margin-top:25px}.schedule-grid{grid-template-columns:1fr}.schedule-card{min-height:345px;padding:32px}.schedule-card h3{font-size:58px;margin:30px 0}.ministry-grid{grid-template-columns:1fr}.ministry-card{height:360px}.ministry-card h3{font-size:47px}.photo-band{height:290px}.photo-band-inner{flex-wrap:wrap;justify-content:center;gap:15px;font-size:22px}.statement{min-height:410px}.statement h2{font-size:clamp(62px,12vw,94px)}.statement-cross{font-size:330px;bottom:-65px}.watch-visual{min-height:360px}.visit{min-height:490px}.visit h2{font-size:clamp(48px,9vw,80px)}.footer-top,.footer-bottom{flex-direction:column;align-items:start;gap:25px}.footer-top{padding-bottom:55px}}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marquee div{animation:none}.ministry-card:before{transition:none}}
+
+/* One Hope Church YouTube livestream section */
+.watch{background:#f9f7f2}.watch-heading-row{display:grid;grid-template-columns:1.05fr .75fr;gap:7%;align-items:end;margin-bottom:45px}.watch-heading-row h2{font-size:clamp(68px,9vw,140px);line-height:.9}.watch-heading-row h2 em{color:var(--orange);font-style:normal}.watch-overline{font-size:11px!important;letter-spacing:.14em;font-weight:800;margin:0 0 25px!important}.watch-heading-row>p{font-size:clamp(16px,1.65vw,21px);line-height:1.65;max-width:475px}.livestream-feature{display:block;position:relative;min-height:clamp(330px,54vw,700px);background:#232c29;color:white;overflow:hidden}.stream-image{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1516280440614-37939bbacd81?auto=format&fit=crop&w=1800&q=85') center / cover;transition:transform .55s;filter:saturate(.65)}.stream-image-overlay{position:absolute;inset:0;background:linear-gradient(180deg,#1119,transparent 40%,#0d191cba)}.livestream-feature:hover .stream-image{transform:scale(1.04)}.stream-tag{position:absolute;top:34px;left:36px;display:inline-flex;align-items:center;gap:10px;font-size:11px;font-weight:800;letter-spacing:.13em;background:#1c201cdd;padding:15px 19px}.stream-tag-dot{width:9px;height:9px;border-radius:50%;background:var(--orange)}.stream-play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);height:112px;width:112px;display:grid;place-items:center;border:2px solid #fff;border-radius:50%;font-size:34px;padding-left:6px;transition:background .2s,scale .2s}.livestream-feature:hover .stream-play{background:var(--orange);scale:1.07}.stream-footer{position:absolute;bottom:30px;left:35px;right:35px;display:flex;align-items:end;justify-content:space-between}.stream-footer strong{display:block;font:800 clamp(30px,4vw,60px) Manrope;letter-spacing:-.07em}.stream-footer small{display:block;margin-top:8px;font-size:15px}.stream-out{font-size:40px}.stream-links{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:25px}.stream-links p{line-height:1.65;max-width:510px;font-size:14px;color:#444d46}.stream-links strong{color:var(--ink)}.stream-actions{display:flex;flex-wrap:wrap;gap:12px}.stream-actions .button-dark{margin:0}.button-outline{display:inline-block;padding:18px 25px;border:2px solid var(--ink);font-size:11px;font-weight:800;letter-spacing:.08em}.button-dark:hover{background:var(--orange);color:var(--ink)}.button-outline:hover{background:var(--ink);color:#fff}
+@media(max-width:850px){.watch-heading-row{grid-template-columns:1fr;gap:22px}.stream-links{align-items:start;flex-direction:column}}
+@media(max-width:600px){.watch-heading-row h2{font-size:clamp(64px,12vw,100px)}.stream-tag{left:15px;top:15px;font-size:9px;padding:12px}.stream-play{width:76px;height:76px;font-size:25px}.stream-footer{left:20px;right:20px;bottom:24px}.stream-footer strong{font-size:32px}.stream-actions{width:100%}.stream-actions a{flex:1;text-align:center;padding:16px 12px}.stream-out{font-size:28px}}
+
+/* Official church logo — dark in the light header, white in the dark footer */
+.brand .church-logo { display:block; width:clamp(190px, 23vw, 285px); height:auto; max-width:100%; }
+.site-header .church-logo { filter:brightness(0); }
+.footer .church-logo { filter:none; }
+@media (max-width:720px) { .brand .church-logo { width:210px; } }
+
+
+/* One Hope worship photo — Sunday card */
+.schedule-grid > .schedule-card:first-child {
+  background: linear-gradient(180deg, rgba(9,14,22,.38), rgba(9,14,22,.78)), url("images/worship-together.jpg") center 45% / cover no-repeat;
+  color: #fff;
+}
+
+/* Responsive YouTube Gallery (Elfsight) */
+.youtube-gallery { width:100%; min-height:260px; margin:0 auto 24px; }
+.youtube-gallery > div { max-width:100%; }
+@media (max-width:720px) { .youtube-gallery { min-height:220px; } }
+
+/* Seamless Instagram feed, immediately after the YouTube gallery */
+.instagram-section{background:var(--paper);padding-top:38px;}
+.instagram-heading-row{display:grid;grid-template-columns:1.05fr .75fr;gap:7%;align-items:end;margin-bottom:42px;}
+.instagram-heading-row h2{font-size:clamp(60px,8vw,122px);line-height:.9;}
+.instagram-heading-row h2 em{font-style:normal;color:var(--orange);}
+.instagram-heading-row>p{font-size:clamp(16px,1.65vw,21px);line-height:1.65;max-width:475px;}
+.instagram-gallery{width:100%;min-height:250px;}
+@media(max-width:850px){.instagram-heading-row{grid-template-columns:1fr;gap:24px;}}
+@media(max-width:720px){.instagram-section{padding-top:30px;}.instagram-heading-row h2{font-size:clamp(52px,10vw,85px);}.instagram-gallery{min-height:180px;}}
+
+/* English / Español language toggle */
+.lang-switch,.mobile-language{display:flex;align-items:center;gap:8px;flex-shrink:0;font-size:12px;font-weight:800;}
+.lang-switch{margin-left:auto;}
+.lang-btn{appearance:none;background:transparent;border:0;color:var(--muted);padding:7px 6px;cursor:pointer;font-family:inherit;font-weight:800;letter-spacing:.04em;border-radius:3px;}
+.lang-btn:hover,.lang-btn.active{color:var(--orange);}
+.lang-btn.active{text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:2px;}
+.lang-btn:focus-visible{outline:2px solid var(--orange);outline-offset:3px;}
+.mobile-language{padding-top:18px;gap:16px;}
+.mobile-language .lang-btn{font-size:13px;padding:10px;}
+@media(max-width:720px){.site-header>.lang-switch{margin-left:auto;margin-right:4px;gap:1px}.site-header>.lang-switch .lang-btn{font-size:11px;padding:5px 4px}.mobile-language{border-top:1px solid #ddd;}}
+@media(min-width:721px){.mobile-language{display:none;}}
+/* Allow translated headlines to wrap cleanly */
+.hero h1,.statement h2,.ministries h2{overflow-wrap:normal;}
+
+/* Location map — matches the existing editorial layout */
+.location-section{background:var(--paper);padding-top:95px;padding-bottom:115px}
+.location-heading-row{display:grid;grid-template-columns:1.2fr .8fr;gap:7%;align-items:end;margin-bottom:40px}
+.location-heading-row h2{font-size:clamp(58px,8vw,126px)}
+.location-heading-row h2 em{color:var(--orange);font-style:normal}
+.location-details p{font-size:clamp(16px,1.5vw,20px);line-height:1.6;max-width:450px;margin-bottom:20px}
+.location-details address{font-style:normal;font-size:15px;font-weight:700;line-height:1.65;margin-bottom:26px}
+.location-directions{display:inline-block;background:var(--orange);color:white;padding:17px 23px;font-weight:800;font-size:12px;letter-spacing:.06em}
+.location-map{position:relative;display:block;width:100%;height:clamp(300px,45vw,520px);overflow:hidden;background:#dce1db;cursor:pointer;border:1px solid #deded8}
+.location-map iframe{width:100%;height:100%;border:0;pointer-events:none;filter:saturate(.8)}
+.map-open-label{position:absolute;bottom:22px;left:22px;background:var(--ink);color:#fff;font-size:11px;font-weight:800;letter-spacing:.07em;padding:17px 20px;box-shadow:0 6px 22px #0003}
+.map-open-label span{margin-left:20px;font-size:16px}
+.location-map:hover .map-open-label,.location-map:focus-visible .map-open-label{background:var(--orange)}
+@media(max-width:720px){.location-section{padding-top:75px;padding-bottom:75px}.location-heading-row{grid-template-columns:1fr;gap:24px}.location-map{height:360px}.map-open-label{bottom:14px;left:14px;font-size:10px;padding:15px}}
+
+/* Bilingual social follow strip */
+.social-connect{background:var(--orange);color:#fff;padding:45px 8%;display:flex;align-items:center;justify-content:space-between;gap:35px}
+.social-connect-copy{min-width:0}.social-connect-eyebrow{display:block;font-size:10px;font-weight:800;letter-spacing:.15em;margin-bottom:9px}
+.social-connect h2{font-size:clamp(31px,3.5vw,57px);line-height:1;letter-spacing:-.06em}.social-connect h2 span{color:#fff8}
+.social-connect p{margin-top:11px;font-size:14px;line-height:1.5}
+.social-connect-links{display:flex;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.social-connect-link{display:flex;align-items:center;gap:12px;min-height:58px;padding:13px 18px;border:1.5px solid #ffffff8c;font-size:12px;font-weight:800;letter-spacing:.055em;transition:background .2s,color .2s}
+.social-connect-link svg{width:23px;height:23px;flex:none}.social-connect-link:hover,.social-connect-link:focus-visible{background:#fff;color:var(--orange)}
+@media(max-width:850px){.social-connect{flex-direction:column;align-items:flex-start;padding:40px 6%}.social-connect-links{justify-content:flex-start;width:100%}}
+@media(max-width:500px){.social-connect-links{display:grid;grid-template-columns:1fr 1fr;gap:8px}.social-connect-link{padding:10px;gap:7px;min-height:52px;font-size:10px}.social-connect-link svg{width:20px;height:20px}}
+
+
+/* Meet One Hope section */
+.meet{background:var(--paper)}
+.meet-intro{display:grid;grid-template-columns:1.05fr .95fr;gap:7%;align-items:end;margin-bottom:45px}
+.meet h2{font-size:clamp(54px,8vw,118px);line-height:.9;margin:0}
+.meet h2 em{font-style:normal;color:var(--orange)}
+.meet-copy>p{font-size:18px;line-height:1.7;max-width:560px}
+.meet-points{list-style:none;padding:0;margin:26px 0 0;display:grid;gap:12px}
+.meet-points li{position:relative;padding-left:24px;font-size:15px;line-height:1.6;font-weight:700}
+.meet-points li:before{content:'✳';position:absolute;left:0;top:0;color:var(--orange)}
+.meet-gallery{display:grid;grid-template-columns:1.2fr .8fr .8fr;gap:16px;align-items:stretch}
+.meet-photo{margin:0;min-height:260px;overflow:hidden;background:#e5e5e5}
+.meet-photo img{display:block;width:100%;height:100%;object-fit:cover}
+.meet-gallery .photo-large{min-height:430px}
+.meet .button-dark{margin-top:26px}
+@media(max-width:900px){.meet-intro,.meet-gallery{grid-template-columns:1fr}.meet-gallery .photo-large,.meet-photo{min-height:300px}}
+
+/* Homepage slideshow video */
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;pointer-events:none}
+.hero-photo{z-index:0}
+.hero-overlay{z-index:1;pointer-events:none}
+.hero-content,.hero-side-label,.hero-index,.hero-topline{z-index:2}
+@media(max-width:720px){.hero-video{object-position:center}}
+@media(prefers-reduced-motion:reduce){.hero-video{display:none}}
+
+/* Mobile-first immersive hero: 4:5 cinematic framing, without stretching the video.
+   A 4:5 mobile export will fill this area with minimal cropping. */
+@media (max-width:720px) {
+  .hero { height:auto; max-height:none; min-height:0; aspect-ratio:4 / 5; padding:0; display:flex; align-items:flex-end; background:#171d23; }
+  .hero-video { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center center; background:#171d23; }
+  .hero-photo { position:absolute; inset:0; width:100%; height:100%; background-size:cover; background-position:center center; transform:none; }
+  .hero-overlay { position:absolute; inset:0; background:linear-gradient(180deg,rgba(4,10,20,.22) 0%,rgba(4,10,20,.24) 32%,rgba(4,10,20,.68) 62%,rgba(4,10,20,.92) 100%); }
+  .hero-content { position:relative; inset:auto; left:auto; right:auto; bottom:auto; width:100%; padding:24px 6% 36px; z-index:2; }
+  .hero h1 { font-size:clamp(32px,7.6vw,54px); line-height:.97; letter-spacing:-.07em; overflow-wrap:normal; }
+  .hero-eyebrow { margin-bottom:18px; font-size:10px; }
+  .hero-bottom { margin-top:20px; }
+  .hero-bottom p { font-size:13px; line-height:1.5; }
+  .hero-index,.hero-side-label { display:none; }
+
+  /* Give tall pictures a tall card, and wide youth group photo a wide card */
+  .ministry-card.kids,.ministry-card.juniors { height:auto; min-height:440px; aspect-ratio:3/4; }
+  .ministry-card.youth { height:auto; min-height:245px; aspect-ratio:16/10; }
+  .ministry-card.youth::before { background-position:center center; background-size:cover; }
+  .ministry-card.kids::before,.ministry-card.juniors::before { background-position:center center; }
+  .ministry-card h3 { font-size:clamp(34px,9vw,47px); }
+
+  /* Let the three Meet One Hope pictures use their natural proportions */
+  .meet-gallery { display:grid; grid-template-columns:1fr; gap:12px; }
+  .meet-gallery .meet-photo,.meet-gallery .photo-large { min-height:0; height:auto; }
+  .meet-photo img { height:auto; max-height:none; object-fit:contain; }
+
+  /* The banner is a near-square photograph; display more of it on phones */
+  .photo-band { height: min(78vw,390px); background-position:center; }
+
+  /* Portrait service photos work better with higher mobile card heights */
+  .schedule-card { min-height:440px; }
+  .schedule-card-dark { background-position:center 35%; }
+}
+
+/* Very narrow phones: preserve the headline without forcing an excessively tall crop */
+@media(max-width:390px){.hero{aspect-ratio:3 / 4}.hero h1{font-size:clamp(29px,7.5vw,38px)}.hero-content{padding-bottom:26px}}
+
+
+/* Sunday gathering feature — image/video + editorial split layout */
+.sunday-feature {display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);background:var(--paper);color:var(--ink);min-height:640px}
+.sunday-feature-copy {display:flex;flex-direction:column;justify-content:center;align-items:flex-start;min-width:0;padding:clamp(48px,6.5vw,110px) clamp(32px,6.1vw,105px)}
+.sunday-feature-kicker {display:flex;align-items:center;gap:12px;font-size:11px;font-weight:800;letter-spacing:.16em;margin-bottom:36px}
+.sunday-feature-line {height:2px;width:28px;background:var(--orange);flex-shrink:0}
+.sunday-feature-tag {display:inline-block;background:var(--orange);color:white;padding:10px 14px;font-size:12px;letter-spacing:.04em;font-weight:800;margin-bottom:24px}
+.sunday-feature h2 {font-size:clamp(44px,5.1vw,78px);line-height:1.01;letter-spacing:-.076em;font-weight:800;max-width:720px}
+.sunday-feature h2 span:first-of-type {white-space:nowrap}
+.sunday-feature-period {color:var(--orange)}
+.sunday-feature-description {font-size:clamp(16px,1.35vw,19px);line-height:1.7;margin-top:30px;max-width:560px}
+.sunday-feature-welcome {font-size:15px;line-height:1.6;margin-top:17px;color:#62665f;max-width:530px}
+.sunday-feature-actions {display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.sunday-feature-button {display:inline-flex;align-items:center;justify-content:space-between;gap:18px;min-height:55px;padding:16px 19px;font-size:11px;font-weight:800;letter-spacing:.055em;border:2px solid var(--orange);transition:background .2s,color .2s}
+.sunday-feature-button.primary {background:var(--orange);color:white}
+.sunday-feature-button.primary:hover,.sunday-feature-button.primary:focus-visible {background:#101526;border-color:#101526}
+.sunday-feature-button.secondary {background:transparent;color:var(--ink)}
+.sunday-feature-button.secondary:hover,.sunday-feature-button.secondary:focus-visible {background:var(--orange);color:white}
+.sunday-feature-media {position:relative;min-width:0;min-height:640px;background:#17202a url('images/worship-together.jpg') center/cover;overflow:hidden}
+.sunday-feature-video {width:100%;height:100%;position:absolute;inset:0;object-fit:cover;object-position:center;display:block}
+.sunday-feature-media-label {position:absolute;bottom:25px;left:26px;right:26px;display:flex;align-items:center;justify-content:space-between;gap:20px;color:white;font-size:11px;font-weight:800;letter-spacing:.12em;text-shadow:0 1px 6px #0008;pointer-events:none}
+.sunday-feature-media-label span{color:white;font-size:26px}
+.sunday-feature-media::after {content:'';position:absolute;inset:72% 0 0;pointer-events:none;background:linear-gradient(transparent,#0007)}
+.sunday-feature-media-label{z-index:1}
+@media(max-width:1100px){.sunday-feature-copy{padding:58px 6%}.sunday-feature h2{font-size:clamp(38px,4.7vw,66px)}.sunday-feature-media{min-height:560px}}
+@media(max-width:760px){
+ .sunday-feature{display:flex;flex-direction:column;min-height:0}
+ .sunday-feature-copy{padding:64px 6% 44px}
+ .sunday-feature-kicker{margin-bottom:25px}
+ .sunday-feature h2{font-size:clamp(42px,9vw,69px)}
+ .sunday-feature-description{font-size:16px;line-height:1.66;margin-top:22px}
+ .sunday-feature-actions{width:100%;gap:10px;margin-top:27px}
+ .sunday-feature-button{min-height:54px}
+ .sunday-feature-media{width:100%;min-height:0;aspect-ratio:3 / 4}
+ .sunday-feature-video{object-position:center;object-fit:cover}
+}
+@media(max-width:420px){.sunday-feature h2{font-size:clamp(37px,9vw,46px)}.sunday-feature-button{font-size:10px;padding:13px}.sunday-feature-actions{flex-direction:column}.sunday-feature-media-label{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.sunday-feature-video{display:none}}
+
+@media(max-width:420px){.sunday-feature h2 span:first-of-type{white-space:normal}}
+
+
+/* October update: framed Sunday feature with space below the opening hero.
+   Keep the original cinematic cover full-width, while the second film reads
+   as a smaller editorial element (not a continuation of the hero video). */
+.sunday-feature {
+  width: min(1240px, 88%);
+  margin: clamp(64px, 7vw, 110px) auto clamp(70px, 8vw, 120px);
+  min-height: 0;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr);
+  align-items: center;
+  column-gap: clamp(36px, 5.5vw, 88px);
+  background: transparent;
+}
+.sunday-feature-copy {
+  padding: clamp(20px, 3vw, 48px) 0;
+}
+.sunday-feature-media {
+  justify-self: center;
+  width: min(100%, 440px);
+  aspect-ratio: 3 / 4;
+  height: auto;
+  min-height: 0;
+  border-radius: 4px;
+  background-position: center;
+}
+.sunday-feature-video {
+  object-fit: cover;
+  object-position: center center;
+}
+@media (max-width: 1100px) and (min-width: 761px) {
+  .sunday-feature { width: 90%; column-gap: 38px; }
+  .sunday-feature-copy { padding: 26px 0; }
+  .sunday-feature-media { min-height: 0; max-width: 390px; }
+}
+@media (max-width: 760px) {
+  .sunday-feature {
+    width: 100%;
+    margin: 0 auto 70px;
+    padding: 58px 6% 0;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+  .sunday-feature-copy { width: 100%; padding: 0; }
+  .sunday-feature-media {
+    width: min(100%, 370px);
+    max-width: 100%;
+    min-height: 0;
+    aspect-ratio: 3 / 4;
+    margin: 0 auto;
+  }
+}
+
+
+/* Ministry cards — photo panels with distinct color frames.
+   Same 5:7 proportions at every breakpoint, including One Hope Youth. */
+.ministries .ministry-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.25vw, 22px);
+}
+.ministries .ministry-card,
+.ministries .ministry-card.kids,
+.ministries .ministry-card.juniors,
+.ministries .ministry-card.youth {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  width: 100%;
+  height: auto;
+  min-height: 0;
+  aspect-ratio: 5 / 7;
+  padding: clamp(45px, 5.4vw, 100px) clamp(30px, 4.25vw, 80px);
+  isolation: isolate;
+  overflow: hidden;
+  color: #fff;
+}
+.ministries .ministry-card.kids { background: #99D69B; }
+.ministries .ministry-card.juniors { background: #004AAD; }
+.ministries .ministry-card.youth { background: #4B7D94; }
+
+.ministries .ministry-card::before,
+.ministries .ministry-card::after {
+  position: absolute;
+  inset: 7% 6.2%;
+  border-radius: 0;
+}
+.ministries .ministry-card::before {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  transform: none;
+  transition: filter .25s ease;
+}
+.ministries .ministry-card.kids::before { background-position: center 52%; }
+.ministries .ministry-card.juniors::before { background-position: center 46%; }
+.ministries .ministry-card.youth::before {
+  background-position: center center;
+  background-size: cover;
+}
+.ministries .ministry-card::after {
+  background: linear-gradient(180deg, rgba(0,0,0,.32), rgba(0,0,0,0) 31%, rgba(0,0,0,.74) 100%);
+}
+.ministries .ministry-card:hover::before { transform: none; filter: brightness(1.08); }
+.ministries .ministry-card:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+.ministries .ministry-number,
+.ministries .ministry-card > div { position: relative; z-index: 1; }
+.ministries .ministry-number {
+  font-size: clamp(10px, .8vw, 13px);
+  font-weight: 800;
+  letter-spacing: .13em;
+  line-height: 1.35;
+}
+.ministries .ministry-card h3 {
+  font-size: clamp(26px, 2.85vw, 51px);
+  line-height: .93;
+  letter-spacing: -.075em;
+  overflow-wrap: anywhere;
+}
+.ministries .ministry-arrow {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 23px;
+  border-radius: 0;
+  background: transparent;
+  color: #fff;
+}
+@media (max-width: 850px) {
+  .ministries .ministry-grid { grid-template-columns: 1fr; gap: 20px; }
+  .ministries .ministry-card,
+  .ministries .ministry-card.kids,
+  .ministries .ministry-card.juniors,
+  .ministries .ministry-card.youth {
+    max-width: 510px;
+    margin-inline: auto;
+    aspect-ratio: 5 / 7;
+    height: auto;
+    min-height: 0;
+    padding: clamp(55px, 14vw, 86px) clamp(42px, 11vw, 65px);
+  }
+  .ministries .ministry-number { font-size: 11px; }
+  .ministries .ministry-card h3 { font-size: clamp(33px, 9vw, 52px); }
+}
+
+
+/* Ways to Give — compact photo / details split layout */
+.give-strip {
+  background: #6ea655;
+  color: #152318;
+  scroll-margin-top: 20px;
+}
+.give-inner {
+  width: 100%;
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 21px 5.5%;
+  display: grid;
+  grid-template-columns: minmax(270px, 35%) minmax(0, 1fr);
+  grid-template-rows: auto auto;
+  gap: 12px clamp(24px, 3vw, 52px);
+  align-items: center;
+}
+.give-photo {
+  grid-column: 1;
+  grid-row: 1 / 3;
+  min-width: 0;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  overflow: hidden;
+  background: #263229;
+}
+.give-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.give-intro {
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+  align-self: end;
+}
+.give-kicker {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.give-strip h2 {
+  font-family: Manrope, sans-serif;
+  font-size: clamp(36px, 3.2vw, 51px);
+  letter-spacing: -.07em;
+  line-height: 1;
+  margin: 0;
+}
+.give-strip h2 em { font-style: normal; color: #fff; }
+.give-caption {
+  max-width: 680px;
+  margin-top: 8px;
+  font-size: 15px;
+  line-height: 1.4;
+}
+.give-methods {
+  grid-column: 2;
+  grid-row: 2;
+  display: grid;
+  grid-template-columns: minmax(105px, .85fr) minmax(160px, 1fr) minmax(154px, .9fr);
+  align-items: center;
+  gap: 10px 16px;
+  margin: 0;
+  min-width: 0;
+  align-self: start;
+}
+.give-method {
+  min-width: 0;
+  padding: 8px 0 8px 14px;
+  border-left: 1px solid rgba(16,40,17,.46);
+}
+.give-method-eyebrow {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 13px;
+  letter-spacing: .08em;
+  font-weight: 800;
+}
+.give-method strong {
+  display: block;
+  font-size: clamp(17px, 1.4vw, 20px);
+  line-height: 1.22;
+  overflow-wrap: anywhere;
+}
+.give-card-link {
+  display: flex;
+  min-height: 58px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  background: #18251c;
+  color: white;
+  padding: 16px 16px;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+.give-card-link:hover { background: #0f1bf2; transform: translateY(-2px); }
+.give-card-link:focus-visible { outline: 3px solid #fff; outline-offset: 4px; }
+.desktop-nav .nav-give { color: #27602c; font-weight: 800; }
+.desktop-nav .nav-give:hover { color: var(--orange); }
+.mobile-nav .nav-give { color: #27602c; }
+
+/* Bring the giving strip closer to the Instagram gallery and directions section. */
+.instagram-section { padding-bottom: 12px; }
+.instagram-gallery { margin-bottom: 0; }
+.location-section { padding-top: 38px; }
+
+@media (max-width: 1080px) {
+  .give-inner { grid-template-columns: minmax(245px, 36%) minmax(0, 1fr); gap: 10px 26px; }
+  .give-methods { grid-template-columns: 1fr 1.15fr; gap: 6px 15px; }
+  .give-card-link { grid-column: 1 / -1; min-height: 52px; }
+  .give-strip h2 { font-size: clamp(33px, 4vw, 45px); }
+}
+@media (max-width: 690px) {
+  .give-inner {
+    padding: 18px 6% 22px;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+  .give-photo { grid-column: 1; grid-row: 1; aspect-ratio: 16 / 9; }
+  .give-intro { grid-column: 1; grid-row: 2; align-self: auto; }
+  .give-methods { grid-column: 1; grid-row: 3; grid-template-columns: 1fr 1fr; gap: 10px 14px; }
+  .give-strip h2 { font-size: clamp(36px, 8vw, 46px); }
+  .give-kicker { font-size: 11px; }
+  .give-caption { font-size: 14px; margin-top: 8px; }
+  .give-method { padding: 7px 0 7px 10px; }
+  .give-method-eyebrow { font-size: 12px; }
+  .give-method strong { font-size: clamp(16px, 4.3vw, 19px); }
+  .give-card-link { grid-column: 1 / -1; font-size: 13px; min-height: 52px; }
+  .instagram-section { padding-bottom: 8px; }
+  .location-section { padding-top: 30px; }
+}
+@media (max-width: 350px) {
+  .give-methods { grid-template-columns: minmax(0,1fr); }
+  .give-card-link { grid-column: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .give-card-link { transition: none; }
+}
+
+/* Keep the church logo, EN/ES control, and menu button on screen together. */
+@media (max-width: 720px) {
+  .site-header { gap: 7px; }
+  .site-header .brand { flex: 0 1 auto; min-width: 0; }
+  .site-header .church-logo { width: clamp(132px, 38vw, 186px); max-width: 100%; }
+  .site-header > .lang-switch { flex: 0 0 auto; }
+  .site-header .menu-toggle { flex: 0 0 auto; padding: 6px; }
+}
