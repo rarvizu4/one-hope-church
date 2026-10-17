@@ -483,52 +483,163 @@
 }
 
 
-/* One Hope upcoming announcements */
-.announcements{background:var(--paper);padding-top:95px;padding-bottom:105px}
-.announcements-heading{display:grid;grid-template-columns:1fr .65fr;align-items:end;gap:7%;margin-bottom:44px}
-.announcements-heading h2{font-size:clamp(52px,8vw,118px);line-height:.91}
-.announcements-heading h2 em{color:var(--orange);font-style:normal}
-.announcements-heading>p{font-size:clamp(16px,1.55vw,20px);line-height:1.65;max-width:420px}
-.announcement-list{border-top:1px solid #dbdcd7}
-.announcement-card{display:grid;grid-template-columns:minmax(160px,245px) 1fr;align-items:center;gap:clamp(26px,4vw,65px);padding:28px 0;border-bottom:1px solid #dbdcd7}
-.announcement-photo{display:block;max-width:245px;overflow:hidden;background:#ece9e4}
-.announcement-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:contain;transition:transform .25s ease}
+
+/* Upcoming events – compact layout with separate periwinkle event boxes */
+html{scroll-padding-top:100px}
+.site-header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  box-shadow:0 1px 0 rgba(20,24,27,.08);
+}
+.mobile-nav{
+  position:fixed;
+  top:88px;
+  left:0;
+  right:0;
+  z-index:99;
+  max-height:calc(100dvh - 88px);
+  overflow-y:auto;
+}
+.announcements{
+  background:var(--paper);
+  padding:clamp(34px,4vw,55px) 8% clamp(42px,5vw,65px);
+  scroll-margin-top:90px;
+}
+.announcements-heading{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  margin:0 0 16px;
+}
+.announcements-heading h2{
+  display:inline-block;
+  width:auto;
+  margin:0;
+  background:#a2a8ad;
+  color:#fff;
+  font-family:Manrope,sans-serif;
+  font-size:clamp(23px,3vw,34px);
+  font-weight:800;
+  line-height:1.2;
+  letter-spacing:-.055em;
+  text-align:center;
+  padding:10px clamp(18px,3vw,34px);
+}
+.announcements-heading h2 em{
+  color:#bdcbff;
+  font-style:normal;
+}
+.announcements-heading h2 span{
+  color:#1c201c;
+}
+.announcement-list{
+  display:grid;
+  gap:22px;
+  max-width:1200px;
+  margin:0 auto;
+  border:0;
+}
+.announcement-card{
+  display:grid;
+  grid-template-columns:minmax(200px,280px) minmax(0,1fr);
+  gap:clamp(26px,5vw,68px);
+  align-items:center;
+  background:#99acff;
+  color:white;
+  padding:clamp(24px,3vw,38px);
+  border:0;
+  box-shadow:none;
+  min-width:0;
+}
+.announcement-photo{
+  display:block;
+  width:100%;
+  max-width:280px;
+  margin:0;
+  overflow:hidden;
+  background:transparent;
+}
+.announcement-photo img{
+  display:block;
+  width:100%;
+  height:auto;
+  aspect-ratio:4/5;
+  object-fit:contain;
+  transition:transform .25s ease;
+}
 .announcement-photo:hover img{transform:scale(1.025)}
-.announcement-details h3{font-size:clamp(23px,2.6vw,38px);letter-spacing:-.045em;line-height:1.15;margin-bottom:13px}
-.announcement-date{font-size:13px;font-weight:700;color:var(--orange);margin-bottom:15px;line-height:1.5}
-.announcement-description{font-size:15px;line-height:1.75;color:#545b53;max-width:690px}
-.announcement-link{display:inline-block;font-size:12px;font-weight:800;letter-spacing:.07em;border-bottom:2px solid var(--orange);padding:0 0 7px;margin-top:20px}
-.announcement-link:hover{color:var(--orange)}
-.announcement-empty{padding:32px 0;color:var(--muted);line-height:1.6}
-@media(max-width:720px){
-  .announcements{padding-top:74px;padding-bottom:74px}
-  .announcements-heading{grid-template-columns:1fr;gap:20px}
-  .announcement-card{grid-template-columns:minmax(0,1fr);gap:22px}
-  .announcement-photo{max-width:min(65%,245px)}
-  .announcement-details h3{font-size:28px}
+.announcement-details{min-width:0}
+.announcement-details h3{
+  font-size:clamp(25px,3vw,40px);
+  line-height:1.15;
+  letter-spacing:-.05em;
+  margin:0 0 12px;
+  color:#fff;
+  text-shadow:0 1px 1px rgba(23,37,107,.16);
 }
-@media(prefers-reduced-motion:reduce){.announcement-photo img{transition:none}}
-
-
-/* Larger editorial announcements feature */
-.announcements { padding-top:120px; padding-bottom:135px; }
-.announcements-heading {grid-template-columns:1.1fr .75fr;gap:6%;margin-bottom:55px}
-.announcements-heading h2 {font-size:clamp(65px,9.5vw,146px);line-height:.88}
-.announcements-heading>p {font-size:clamp(18px,1.8vw,23px);line-height:1.65}
-.announcement-card {grid-template-columns:minmax(270px,390px) minmax(0,1fr);gap:clamp(32px,6vw,95px);padding:42px 0}
-.announcement-photo {max-width:390px;width:100%;background:transparent}
-.announcement-photo img {width:100%;height:auto;aspect-ratio:4/5;object-fit:contain}
-.announcement-details h3 {font-size:clamp(30px,3.5vw,52px);margin-bottom:18px}
-.announcement-date {font-size:16px;margin-bottom:21px}
-.announcement-description {font-size:clamp(16px,1.5vw,20px);max-width:700px}
-.announcement-link {font-size:13px;margin-top:25px}
-@media(max-width:850px) {
- .announcements-heading {grid-template-columns:1fr;gap:24px}
- .announcement-card {grid-template-columns:1fr;gap:25px}
- .announcement-photo {max-width:min(100%,390px)}
+.announcement-date{
+  font-size:clamp(13px,1.3vw,16px);
+  line-height:1.5;
+  font-weight:800;
+  margin-bottom:13px;
+  color:#132bcc;
 }
-@media(max-width:720px) {
- .announcements {padding-top:75px;padding-bottom:85px}
- .announcements-heading h2 {font-size:clamp(51px,10.5vw,80px)}
- .announcement-card {padding:30px 0}
+.announcement-description{
+  font-size:clamp(15px,1.4vw,18px);
+  line-height:1.7;
+  color:#fff;
+  font-weight:500;
+  max-width:700px;
+  text-shadow:0 1px 1px rgba(23,37,107,.18);
+}
+.announcement-link{
+  display:inline-block;
+  margin-top:20px;
+  padding:0 0 5px;
+  font-size:12px;
+  font-weight:800;
+  letter-spacing:.06em;
+  color:#152bb0;
+  border-bottom:2px solid #152bb0;
+}
+.announcement-link:hover,.announcement-link:focus-visible{
+  color:#fff;
+  border-color:#fff;
+}
+.announcement-empty{
+  padding:36px 22px;
+  background:#99acff;
+  color:#172459;
+  text-align:center;
+  font-weight:700;
+  line-height:1.6;
+}
+@media (min-width:961px) and (max-width:1200px){
+  .site-header{gap:12px;padding-inline:3%}
+  .desktop-nav{gap:clamp(9px,1.15vw,16px);font-size:11px}
+  .site-header .church-logo{width:clamp(165px,19vw,235px)}
+  .header-cta{padding:13px 14px;white-space:nowrap}
+  .header-cta span{margin-left:6px}
+}
+@media (min-width:721px) and (max-width:960px){
+  .desktop-nav,.header-cta{display:none}
+  .menu-toggle{display:block}
+  .site-header{padding-inline:5%;gap:12px}
+  .site-header .church-logo{width:clamp(165px,24vw,220px)}
+}
+@media (max-width:720px){
+  html{scroll-padding-top:85px}
+  .mobile-nav{top:75px;max-height:calc(100dvh - 75px)}
+  .announcements{padding:28px 6% 44px;scroll-margin-top:77px}
+  .announcements-heading{margin-bottom:13px}
+  .announcements-heading h2{font-size:clamp(21px,5.6vw,29px);padding:10px 16px}
+  .announcement-list{gap:15px}
+  .announcement-card{grid-template-columns:1fr;gap:21px;padding:22px}
+  .announcement-photo{max-width:min(76%,300px)}
+  .announcement-details h3{font-size:clamp(25px,7vw,34px)}
+  .announcement-description{font-size:15px}
+}
+@media (prefers-reduced-motion:reduce){
+  .announcement-photo img{transition:none}
 }
