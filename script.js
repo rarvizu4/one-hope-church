@@ -43,7 +43,6 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   ".sunday-feature-button.primary": "PLANEA TU VISITA <span aria-hidden=\"true\">↗</span>",
   ".sunday-feature-button.secondary": "CÓMO LLEGAR <span aria-hidden=\"true\">↗</span>",
   ".sunday-feature-media-label": "LOS DOMINGOS EN ONE HOPE <span aria-hidden=\"true\">✳</span>",
-  ".photo-band-inner": "<span>CRECE EN LA FE</span><span class=\"mini-star\">✳</span><span>ENCUENTRA TU COMUNIDAD</span>",
   ".gather .section-kicker": "<span class=\"kicker-line\"></span> ACOMPÁÑANOS / 002",
   ".gather .section-heading h2": "VEN TAL<br>COMO ERES<span class=\"orange\">.</span>",
   ".gather .section-heading > p": "¿Nos visitas por primera vez? ¡Tenemos un lugar para ti! Ven a disfrutar de la adoración, la Palabra y una comunidad lista para recibirte.",
