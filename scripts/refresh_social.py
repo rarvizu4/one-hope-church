@@ -37,6 +37,36 @@ def secure_https(value):
     return value if isinstance(value, str) and value.startswith("https://") else ""
 
 
+def resolve_youtube_channel_id(channel_handle):
+    """Resolve a public @handle to its stable UC... channel ID via YouTube HTML."""
+    if not isinstance(channel_handle, str):
+        raise ValueError("Invalid YouTube channel handle")
+    candidate = channel_handle.strip()
+    if candidate.startswith("https://"):
+        parsed = urllib.parse.urlparse(candidate)
+        if parsed.hostname not in {"www.youtube.com", "youtube.com", "m.youtube.com"}:
+            raise ValueError("YouTube channel URL must be on youtube.com")
+        candidate = parsed.path.strip("/")
+    candidate = candidate.split("/", 1)[0]
+    if not re.fullmatch(r"@[A-Za-z0-9._-]{3,80}", candidate):
+        raise ValueError("Expected a YouTube @handle, or a URL containing one")
+
+    url = "https://www.youtube.com/" + urllib.parse.quote(candidate, safe="@._-")
+    page = open_url(url).decode("utf-8", errors="replace")
+    patterns = [
+        r'<meta[^>]*itemprop=["\\\']channelId["\\\'][^>]*content=["\\\'](UC[A-Za-z0-9_-]{22})',
+        r'<meta[^>]*content=["\\\'](UC[A-Za-z0-9_-]{22})["\\\'][^>]*itemprop=["\\\']channelId',
+        r'"externalId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"',
+        r'"channelId"\s*:\s*"(UC[A-Za-z0-9_-]{22})"',
+    ]
+    for pattern in patterns:
+        match = re.search(pattern, page)
+        if match:
+            print("YouTube handle successfully resolved to a channel ID")
+            return match.group(1)
+    raise ValueError("Could not resolve YouTube @handle; provide its UC... ID instead")
+
+
 def youtube_posts(channel_id):
     if not re.fullmatch(r"UC[A-Za-z0-9_-]{22}", channel_id):
         raise ValueError("YOUTUBE_CHANNEL_ID must be a YouTube UC... channel ID (24 characters)")
@@ -102,20 +132,24 @@ def main():
     enabled = 0
     errors = 0
     channel_id = os.environ.get("YOUTUBE_CHANNEL_ID", "").strip()
-    if not channel_id:
-        config_path = ROOT / "social-sources.json"
-        if config_path.exists():
-            config = json.loads(config_path.read_text(encoding="utf-8"))
+    channel_handle = ""
+    config_path = ROOT / "social-sources.json"
+    if config_path.exists():
+        config = json.loads(config_path.read_text(encoding="utf-8"))
+        if not channel_id:
             channel_id = str(config.get("youtubeChannelId") or "").strip()
-    if channel_id:
+        channel_handle = str(config.get("youtubeHandle") or "").strip()
+
+    if channel_id or channel_handle:
         enabled += 1
         try:
-            write_if_changed("youtube", youtube_posts(channel_id))
+            resolved_id = channel_id or resolve_youtube_channel_id(channel_handle)
+            write_if_changed("youtube", youtube_posts(resolved_id))
         except (ValueError, ET.ParseError, urllib.error.URLError, TimeoutError) as exc:
             errors += 1
             print("YouTube feed could not refresh: " + str(exc), file=sys.stderr)
     else:
-        print("YouTube: waiting for channel ID in social-sources.json or YOUTUBE_CHANNEL_ID")
+        print("YouTube: waiting for youtubeHandle or youtubeChannelId in social-sources.json")
 
     token = os.environ.get("INSTAGRAM_ACCESS_TOKEN", "").strip()
     if token:
