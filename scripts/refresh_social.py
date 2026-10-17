@@ -85,7 +85,8 @@ def youtube_posts(channel_id):
             "thumbnail": "https://i.ytimg.com/vi/" + ident + "/hqdefault.jpg",
             "published": entry.findtext("atom:published", default="", namespaces=ns),
         })
-    return posts[:12]
+    posts.sort(key=lambda p: p["published"], reverse=True)
+    return posts[:1]
 
 
 def instagram_posts(token):
