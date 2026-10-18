@@ -17,20 +17,20 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 (() => {
   const translations = {
   ".skip-link": "Saltar al contenido",
-  ".desktop-nav a[href=\"#about\"]": "Nuestra iglesia",
+  ".desktop-nav a[href=\"#about\"]": "Domingos",
   ".desktop-nav a[href=\"#ministries\"]": "Ministerios",
-  ".desktop-nav a[href=\"#bible-study\"]": "Estudio Bíblico",
+  ".desktop-nav a[href=\"#bible-study\"]": "Jueves",
   ".desktop-nav a[href=\"#announcements\"]": "Eventos",
-  ".desktop-nav a[href=\"#watch\"]": "Mensajes",
-  ".desktop-nav a[href=\"#give\"]": "DONAR",
+  ".desktop-nav a[href=\"#watch\"]": "Ver",
+  ".desktop-nav a[href=\"#give\"]": "Donar",
   ".mobile-nav a[href=\"#give\"]": "Donar",
-  ".header-cta": "PLANEA TU VISITA <span aria-hidden=\"true\">↗</span>",
-  ".mobile-nav a[href=\"#about\"]": "Nuestra iglesia",
+  ".header-cta": "PLANEA TU VISITA <span aria-hidden=\"true\"></span>",
+  ".mobile-nav a[href=\"#about\"]": "Domingos",
   ".mobile-nav a[href=\"#ministries\"]": "Ministerios",
-  ".mobile-nav a[href=\"#bible-study\"]": "Estudio Bíblico",
+  ".mobile-nav a[href=\"#bible-study\"]": "Jueves",
   ".mobile-nav a[href=\"#announcements\"]": "Eventos",
-  ".mobile-nav a[href=\"#watch\"]": "Mensajes",
-  ".mobile-nav a[href=\"#location\"]": "Planea tu visita ↗",
+  ".mobile-nav a[href=\"#watch\"]": "Ver",
+  ".mobile-nav a[href=\"#location\"]": "Planea tu visita ",
   ".hero-eyebrow": "BIENVENIDOS A IGLESIA UNA ESPERANZA",
   ".hero h1": "TRANSFORMANDO<br>VIDAS A TRAVÉS<br>DE SU <em>PALABRA</em><span class=\"hero-period\">.</span>",
   ".hero-bottom p": "Comunidad verdadera. Enseñanza bíblica.<br>Una familia de fe arraigada en la esperanza.",
@@ -40,9 +40,9 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   ".sunday-feature h2": "DOMINGOS A LAS<br><span>11AM Y 1PM</span><span class=\"sunday-feature-period\">.</span>",
   ".sunday-feature-description": "Cada domingo nos reunimos para adorar a Jesús, escuchar un mensaje de la Palabra de Dios y crecer juntos como familia de fe. Ya sea tu primera visita o si nos has acompañado antes, nos encantaría adorar contigo.",
   ".sunday-feature-welcome": "Acompáñanos en Spring, Texas. Tú y tu familia son bienvenidos.",
-  ".sunday-feature-button.primary": "PLANEA TU VISITA <span aria-hidden=\"true\">↗</span>",
-  ".sunday-feature-button.secondary": "CÓMO LLEGAR <span aria-hidden=\"true\">↗</span>",
-  ".sunday-feature-media-label": "LOS DOMINGOS EN ONE HOPE <span aria-hidden=\"true\">✳</span>",
+  ".sunday-feature-button.primary": "PLANEA TU VISITA <span aria-hidden=\"true\"></span>",
+  ".sunday-feature-button.secondary": "CÓMO LLEGAR <span aria-hidden=\"true\"></span>",
+  ".sunday-feature-media-label": "LOS DOMINGOS EN ONE HOPE <span aria-hidden=\"true\"></span>",
   ".bible-study-kicker": "<span class=\"bible-study-line\" aria-hidden=\"true\"></span> ACOMPÁÑANOS / 002",
   ".bible-study-tag": "ESTUDIO BÍBLICO",
   ".bible-study-feature h2": "JUEVES A LAS<br><span>7PM</span><span class=\"bible-study-period\">.</span>",
@@ -64,7 +64,7 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   ".meet-points li:nth-child(1)": "Predicación bíblica centrada en Jesús",
   ".meet-points li:nth-child(2)": "Adoración para toda la familia",
   ".meet-points li:nth-child(3)": "Comunidad real para cada generación",
-  ".meet .button-dark": "PLANEA TU VISITA ↗",
+  ".meet .button-dark": "PLANEA TU VISITA ",
   ".announcements h2": "PRÓXIMOS <em>EVENTOS</em><span aria-hidden=\"true\">:</span>",
   ".watch h2": "MIRA EL<br><em>MENSAJE MÁS RECIENTE.</em>",
   ".watch-heading-row > p": "¿No puedes venir en persona? Acompáñanos en línea y ponte al día con nuestros mensajes más recientes y contenido de nuestra iglesia.",
@@ -79,14 +79,14 @@ document.querySelector('#year').textContent = new Date().getFullYear();
   ".location-section > .section-kicker": "<span class=\"kicker-line\"></span> ENCUÉNTRANOS / 006",
   ".location-heading-row h2": "ENCUENTRA<br><em>EL CAMINO.</em>",
   ".location-details p": "Nos encantaría recibirte. Toca el mapa para abrir nuestra ubicación en Google Maps y obtener indicaciones.",
-  ".location-directions": "CÓMO LLEGAR ↗",
-  ".map-open-label": "ABRIR EN GOOGLE MAPS <span aria-hidden=\"true\">↗</span>",
+  ".location-directions": "CÓMO LLEGAR ",
+  ".map-open-label": "ABRIR EN GOOGLE MAPS <span aria-hidden=\"true\"></span>",
   ".social-connect-eyebrow": "IGLESIA UNA ESPERANZA · SIGUE EN CONTACTO",
   ".social-connect h2": "MANTENTE CONECTADO<span aria-hidden=\"true\">.</span>",
   ".social-connect p": "Mantente cerca de nuestra familia de fe durante la semana.",
   ".footer-top > span": "UNA IGLESIA. UNA FAMILIA. UNA ESPERANZA.",
   ".footer-bottom > span:first-child": "© <span id=\"year\"></span> IGLESIA UNA ESPERANZA",
-  ".footer-bottom > a": "VOLVER ARRIBA ↑"
+  ".footer-bottom > a": "VOLVER ARRIBA "
 };
   let announcementEvents = [];
   let currentAnnouncementLanguage = 'en';
@@ -139,7 +139,7 @@ document.querySelector('#year').textContent = new Date().getFullYear();
         view.href = event.flyerUrl || event.image;
         view.target = '_blank';
         view.rel = 'noopener noreferrer';
-        view.textContent = es ? 'VER FLYER ↗' : 'VIEW FLYER ↗';
+        view.textContent = es ? 'VER FLYER ' : 'VIEW FLYER ';
         details.append(view);
       }
       card.append(photoLink, details);
