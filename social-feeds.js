@@ -54,10 +54,6 @@
     picture.decoding = "async";
     action.append(picture);
 
-    const icon = create("span", "native-social-photo-icon", isYouTube ? "▶" : "↗");
-    icon.setAttribute("aria-hidden", "true");
-    action.append(icon);
-
     if (isYouTube) {
       action.addEventListener("click", event => {
         const dialog = document.querySelector("#native-video-dialog");
@@ -86,7 +82,7 @@
     const dateText = formatDate(post.published);
     if (dateText) copy.append(create("p", "native-social-date", dateText));
     const outbound = create("a", "native-social-outbound",
-      isYouTube ? translate("WATCH VIDEO ↗", "VER VIDEO ↗") : translate("VIEW POST ↗", "VER PUBLICACIÓN ↗"));
+      isYouTube ? translate("WATCH VIDEO ", "VER VIDEO ") : translate("VIEW POST ", "VER PUBLICACIÓN "));
     outbound.href = link;
     outbound.target = "_blank";
     outbound.rel = "noopener noreferrer";
