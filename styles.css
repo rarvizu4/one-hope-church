@@ -907,7 +907,7 @@ html{scroll-padding-top:100px}
 
 /* Spanish-specific original collage — activated by the existing EN/ES switch. */
 html[lang="es"] .photo-band.photo-band-thankful{
-  background-image:url('images/one-hope-thankful-banner-es.jpg'),url('images/grow-in-faith-band.jpg');
+  background-image:url('images/one-hope-thankful-banner-es.webp');
 }
 
 /* Full-bleed Upcoming Events: joined gray header and blue announcement panels. */
