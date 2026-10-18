@@ -1143,3 +1143,35 @@ html[lang="es"] .photo-band.photo-band-thankful{
   .bible-study-feature h2 span:first-of-type{white-space:normal}
   .bible-study-media-label{font-size:10px}
 }
+
+/* Thursday video-on-left feature overrides. */
+@media (min-width:761px){
+  .bible-study-feature{
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+  }
+  .bible-study-media{
+    grid-column:1;
+    grid-row:1;
+  }
+  .bible-study-copy{
+    grid-column:2;
+    grid-row:1;
+  }
+}
+.bible-study-video{
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
+}
+@media (prefers-reduced-motion:reduce){
+  .bible-study-media{
+    background:#161c22 url('images/prayer-and-word.jpg') center/cover no-repeat;
+  }
+  .bible-study-video{
+    display:none;
+  }
+}
