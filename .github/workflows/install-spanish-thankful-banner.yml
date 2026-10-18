@@ -48,3 +48,5 @@ jobs:
           git commit -m "Add Spanish church thankful collage to images"
           git pull --rebase origin main
           git push origin HEAD:main
+
+# Rerun after the workflow exists on the default branch.
