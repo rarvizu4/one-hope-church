@@ -1,0 +1,24 @@
+{
+  "original": {
+    "status": "OK",
+    "width": 199,
+    "height": 112,
+    "bytes": 12378
+  },
+  "resized_2048": {
+    "status": "HTTPError",
+    "detail": "HTTP Error 403: Forbidden"
+  },
+  "resized_1024": {
+    "status": "HTTPError",
+    "detail": "HTTP Error 403: Forbidden"
+  },
+  "width_only": {
+    "status": "HTTPError",
+    "detail": "HTTP Error 403: Forbidden"
+  },
+  "height_only": {
+    "status": "HTTPError",
+    "detail": "HTTP Error 403: Forbidden"
+  }
+}
