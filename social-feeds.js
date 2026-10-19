@@ -78,11 +78,20 @@
     const title = create("h3", "native-social-title",
       isYouTube ? (post.title || "Church video")
         : String(post.caption || translate("From our church family", "De nuestra familia de fe")));
+    if (isYouTube) {
+      const isLive = post.kind === "livestream";
+      const badge = create("span", "native-youtube-kind",
+        isLive ? translate("LATEST LIVESTREAM", "TRANSMISIÓN RECIENTE")
+               : translate("LATEST UPLOAD", "VIDEO MÁS RECIENTE"));
+      copy.append(badge);
+    }
     copy.append(title);
     const dateText = formatDate(post.published);
     if (dateText) copy.append(create("p", "native-social-date", dateText));
     const outbound = create("a", "native-social-outbound",
-      isYouTube ? translate("WATCH VIDEO", "VER VIDEO") : translate("VIEW POST", "VER PUBLICACIÓN"));
+      isYouTube
+        ? (post.kind === "livestream" ? translate("WATCH LIVESTREAM", "VER TRANSMISIÓN") : translate("WATCH VIDEO", "VER VIDEO"))
+        : translate("VIEW POST", "VER PUBLICACIÓN"));
     outbound.href = link;
     outbound.target = "_blank";
     outbound.rel = "noopener noreferrer";
@@ -97,13 +106,23 @@
     const fallback = document.querySelector(config.fallback);
     if (!target || !config.items.length) return;
     const grid = create("div", "native-social-grid");
-    const ordered = kind === "youtube"
-      ? [...config.items].sort((a, b) => new Date(b.published || 0) - new Date(a.published || 0))
-      : config.items;
-    ordered.slice(0, kind === "youtube" ? 1 : 8).forEach(post => {
-      const element = card(kind, post);
-      if (element) grid.append(element);
-    });
+    if (kind === "youtube") {
+      // These categories are independent: a new livestream never replaces the Bible study upload.
+      for (const category of ["livestream", "upload"]) {
+        const post = config.items.find(item => item.kind === category);
+        if (!post) continue;
+        const element = card(kind, post);
+        if (element) {
+          element.dataset.videoKind = category;
+          grid.append(element);
+        }
+      }
+    } else {
+      config.items.slice(0, 8).forEach(post => {
+        const element = card(kind, post);
+        if (element) grid.append(element);
+      });
+    }
     if (!grid.children.length) return;
     target.replaceChildren(grid);
     target.hidden = false;
@@ -140,6 +159,9 @@
   }
   document.querySelectorAll(".lang-btn").forEach(button =>
     button.addEventListener("click", () => {
+      document.querySelectorAll(".native-youtube-fallback .native-youtube-kind").forEach(label => {
+        label.textContent = language() === "es" ? label.dataset.labelEs : label.dataset.labelEn;
+      });
       for (const kind of Object.keys(feeds)) render(kind);
     })
   );
