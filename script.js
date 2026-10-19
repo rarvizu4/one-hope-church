@@ -17,6 +17,8 @@ document.querySelector('#year').textContent = new Date().getFullYear();
 (() => {
   const translations = {
   ".skip-link": "Saltar al contenido",
+  ".desktop-nav .nav-about-us": "Sobre Nosotros",
+  ".mobile-nav .nav-about-us": "Sobre Nosotros",
   ".desktop-nav a[href=\"#about\"]": "Domingos",
   ".desktop-nav a[href=\"#ministries\"]": "Ministerios",
   ".desktop-nav a[href=\"#bible-study\"]": "Jueves",
