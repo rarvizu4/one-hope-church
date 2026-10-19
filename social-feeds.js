@@ -53,6 +53,11 @@
     picture.loading = "lazy";
     picture.decoding = "async";
     action.append(picture);
+    if (isYouTube) {
+      const play = create("span", "native-youtube-play", "▶");
+      play.setAttribute("aria-hidden", "true");
+      action.append(play);
+    }
 
     if (isYouTube) {
       action.addEventListener("click", event => {
