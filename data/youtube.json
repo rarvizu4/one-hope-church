@@ -5,7 +5,16 @@
       "title": "Servicio del Domingo | Iglesia Una Esperanza | 10/18/26",
       "url": "https://www.youtube.com/watch?v=cDsg60dECvo",
       "thumbnail": "https://i.ytimg.com/vi/cDsg60dECvo/hqdefault.jpg",
-      "published": "2026-10-19T07:49:26+00:00"
+      "published": "2026-10-19T07:49:26+00:00",
+      "kind": "livestream"
+    },
+    {
+      "id": "xdXT4wodBh4",
+      "title": "Bible Study | Bro. Sergio Lozano | OHC | 10/16/2026",
+      "url": "https://www.youtube.com/watch?v=xdXT4wodBh4",
+      "thumbnail": "https://i.ytimg.com/vi/xdXT4wodBh4/hqdefault.jpg",
+      "published": "2026-10-17T07:31:32+00:00",
+      "kind": "upload"
     }
   ]
 }
