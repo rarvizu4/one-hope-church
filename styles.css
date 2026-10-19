@@ -1202,3 +1202,15 @@ html[lang="es"] .photo-band.photo-band-thankful{
     display:none;
   }
 }
+
+/* About Us link in the existing church navigation (new tab). */
+.desktop-nav .nav-about-us{color:var(--orange);font-weight:800;white-space:nowrap}
+.mobile-nav .nav-about-us{color:var(--orange);font-weight:800}
+@media(min-width:961px) and (max-width:1300px){
+  .desktop-nav{gap:clamp(7px,.8vw,12px)}
+  .site-header .church-logo{width:clamp(130px,16vw,205px)}
+}
+@media(min-width:961px) and (max-width:1160px){
+  .header-cta{display:none}
+}
+/* About Us new-tab navigation 2026 */
