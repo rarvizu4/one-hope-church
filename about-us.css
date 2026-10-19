@@ -2,3 +2,7 @@
 
 /* Prevent headline overflow on small phones, including the longer Spanish title. */
 @media(max-width:400px){.about-intro h1{font-size:clamp(47px,12.2vw,60px);white-space:normal;overflow-wrap:normal}}
+
+/* Use the full dark One Hope Church logo in the light header. */
+.about-brand img{display:block;width:clamp(140px,16vw,225px);height:auto;filter:brightness(0)}
+@media(max-width:400px){.about-brand img{width:clamp(124px,39vw,155px)}.back-home span[data-i18n="back"]{display:none}}
