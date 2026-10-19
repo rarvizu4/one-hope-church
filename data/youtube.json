@@ -9,12 +9,12 @@
       "kind": "livestream"
     },
     {
+      "kind": "upload",
       "id": "xdXT4wodBh4",
       "title": "Bible Study | Bro. Sergio Lozano | OHC | 10/16/2026",
       "url": "https://www.youtube.com/watch?v=xdXT4wodBh4",
       "thumbnail": "https://i.ytimg.com/vi/xdXT4wodBh4/hqdefault.jpg",
-      "published": "2026-10-17T07:31:32+00:00",
-      "kind": "upload"
+      "published": "2026-10-17T00:00:00+00:00"
     }
   ]
 }
