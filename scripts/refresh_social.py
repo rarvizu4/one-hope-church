@@ -67,10 +67,8 @@ def resolve_youtube_channel_id(channel_handle):
     raise ValueError("Could not resolve YouTube @handle; provide its UC... ID instead")
 
 
-def youtube_posts(channel_id):
-    if not re.fullmatch(r"UC[A-Za-z0-9_-]{22}", channel_id):
-        raise ValueError("YOUTUBE_CHANNEL_ID must be a YouTube UC... channel ID (24 characters)")
-    feed = open_url("https://www.youtube.com/feeds/videos.xml?channel_id=" + channel_id)
+def parse_youtube_feed(feed):
+    """Parse a public YouTube Atom playlist into newest-first video metadata."""
     root = ET.fromstring(feed)
     ns = {"atom": "http://www.w3.org/2005/Atom", "yt": "http://www.youtube.com/xml/schemas/2015"}
     posts = []
@@ -86,7 +84,49 @@ def youtube_posts(channel_id):
             "published": entry.findtext("atom:published", default="", namespaces=ns),
         })
     posts.sort(key=lambda p: p["published"], reverse=True)
-    return posts[:1]
+    return posts
+
+
+def youtube_posts(channel_id):
+    """Get the newest live replay and standard upload from distinct YouTube tabs.
+
+    YouTube's public auto-playlist IDs use UULV (Live) and UULF (Videos).
+    This undocumented playlist convention can change; keep prior data if it does.
+    """
+    if not re.fullmatch(r"UC[A-Za-z0-9_-]{22}", channel_id):
+        raise ValueError("YOUTUBE_CHANNEL_ID must be a YouTube UC... channel ID (24 characters)")
+
+    previous = {}
+    prior_file = DATA / "youtube.json"
+    if prior_file.exists():
+        try:
+            old = json.loads(prior_file.read_text(encoding="utf-8")).get("items", [])
+            previous = {p.get("kind"): p for p in old if isinstance(p, dict) and p.get("kind") in ("livestream", "upload")}
+        except (ValueError, OSError):
+            pass
+
+    result = []
+    for kind, prefix in (("livestream", "UULV"), ("upload", "UULF")):
+        playlist_id = prefix + channel_id[2:]
+        url = "https://www.youtube.com/feeds/videos.xml?" + urllib.parse.urlencode({"playlist_id": playlist_id})
+        try:
+            entries = parse_youtube_feed(open_url(url))
+            if entries:
+                result.append(dict(entries[0], kind=kind))
+                print("YouTube " + kind + ": " + entries[0]["id"])
+            elif kind in previous:
+                result.append(previous[kind])
+                print("YouTube " + kind + ": no new public video; preserving previous")
+            else:
+                print("YouTube " + kind + ": no public videos yet")
+        except (ET.ParseError, urllib.error.URLError, TimeoutError, ValueError) as exc:
+            print("YouTube " + kind + ": feed unavailable; retaining prior video (" + str(exc)[:160] + ")", file=sys.stderr)
+            if kind in previous:
+                result.append(previous[kind])
+
+    if not result:
+        raise ValueError("Both YouTube category feeds were empty or unavailable")
+    return result
 
 
 def instagram_posts(token):
